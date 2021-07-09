@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+    <script type="text/javascript" src="{{url_for('static', filename='js/App.js')}}"></script>
+
+    <title>{{username}} Scores</title>
+</head>
+<body onload="hello('Hi my sweet {{usename}}, you are logged in successfully!')">
+    <div class="container p-4">
+        <h2>Welcome {{username}},</h2>
+        <p>Below are your scores</p>
+        <table class="table table=sm table-hover table-primary my-4 mx-auto">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {%for score in scores: %}
+                    <tr>
+                        <td>{{score['date']}}</td>
+                        <td>{{score['subjectName']}}</td>
+                        <td>{{score['marks']}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </thead>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for # here we're importing Flask into our python file and callign render_template and request
+from flask.helpers import make_response
+from trainers import Trainer #importing the class called Trainer into the flask application
 
 app = Flask(__name__) # create an instance of flask
 
